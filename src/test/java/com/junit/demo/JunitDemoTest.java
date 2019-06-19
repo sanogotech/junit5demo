@@ -1,22 +1,13 @@
 package com.junit.demo;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.RepeatedTest;
+import org.junit.jupiter.api.RepetitionInfo;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 class JunitDemoTest {
-
-    static long start = 0;
-
-    @BeforeAll
-    static void setup() {
-        start = System.currentTimeMillis();
-    }
-
-    @AfterAll
-    static void tearDown() {
-        System.out.println("total time :"+ (System.currentTimeMillis() - start));
-    }
 
     @ParameterizedTest(name = "should test {arguments} for even number")
     @ValueSource(strings = {"2", "4", "6", "14"})
